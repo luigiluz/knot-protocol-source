@@ -46,19 +46,19 @@
 #define KNOT_MSG_INVALID			0x00
 // KNoT connect/register messages (from device)
 #define KNOT_MSG_REGISTER_REQ			0x10
-#define KNOT_MSG_REGISTER_RESP			0x11
+#define KNOT_MSG_REGISTER_RSP			0x11
 #define KNOT_MSG_UNREGISTER_REQ			0x12
-#define KNOT_MSG_UNREGISTER_RESP		0x13
+#define KNOT_MSG_UNREGISTER_RSP			0x13
 #define KNOT_MSG_AUTH_REQ			0x14
-#define KNOT_MSG_AUTH_RESP			0x15
+#define KNOT_MSG_AUTH_RSP			0x15
 /*
  * KNoT device config messages (from device)
  * END flag indicates end of schema transfer.
  */
 #define KNOT_MSG_SCHEMA				0x40
-#define KNOT_MSG_SCHEMA_RESP			0x41
+#define KNOT_MSG_SCHEMA_RSP			0x41
 #define KNOT_MSG_SCHEMA_END			0x42
-#define KNOT_MSG_SCHEMA_END_RESP		0x43
+#define KNOT_MSG_SCHEMA_END_RSP			0x43
 // KNoT data sending config messages (from gateway)
 #define KNOT_MSG_GET_CONFIG			0x50
 #define KNOT_MSG_SET_CONFIG			0x51
@@ -69,10 +69,10 @@
 #define KNOT_MSG_SET_COMMAND			0x33
 // KNoT response messages (from device)
 #define KNOT_MSG_DATA				0x20
-#define KNOT_MSG_DATA_RESP			0x21
+#define KNOT_MSG_DATA_RSP			0x21
 #define KNOT_MSG_COMMAND			0x22
 #define KNOT_MSG_CONFIG				0x24
-#define KNOT_MSG_CONFIG_RESP			0x25
+#define KNOT_MSG_CONFIG_RSP			0x25
 
 // KNoT event flags passed by config messages
 #define KNOT_EVT_FLAG_NONE			0x00
