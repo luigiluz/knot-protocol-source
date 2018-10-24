@@ -157,14 +157,14 @@ typedef struct __attribute__ ((packed)) {
 	char			token[KNOT_PROTOCOL_TOKEN_LEN];
 } knot_msg_authentication;
 
-/* A human readint8_table name for each data source/sink in the device */
-#define KNOT_PROTOCOL_DATA_NAME_LEN		64
+/* A human readable name for each data source/sink */
+#define KNOT_PROTOCOL_DATA_NAME_LEN		23
 typedef struct __attribute__ ((packed)) {
 	uint8_t			value_type;	// KNOT_VALUE_TYPE_* (int, float, bool, raw)
 	uint8_t			unit;		// KNOT_UNIT_*
 	uint16_t		type_id;	// KNOT_TYPE_ID_*
 	char			name[KNOT_PROTOCOL_DATA_NAME_LEN];
-} knot_schema; // 69 bytes
+} knot_schema; // 30 octets
 
 typedef struct __attribute__ ((packed)) {
 	knot_msg_header		hdr;
