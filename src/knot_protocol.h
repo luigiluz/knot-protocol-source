@@ -11,41 +11,38 @@
 #ifndef KNOT_PROTOCOL_H
 #define KNOT_PROTOCOL_H
 
-#define KNOT_SUCCESS				0
-#define KNOT_ERROR_UNKNOWN			-1
-#define KNOT_INVALID_DEVICE			-2
-#define KNOT_INVALID_DATA			-3
-#define KNOT_CLOUD_FAILURE			-4
-#define KNOT_INVALID_SCHEMA			-5
-#define KNOT_SCHEMA_EMPTY			-6
-#define KNOT_CREDENTIAL_UNAUTHORIZED		-7
+#define KNOT_ERR_UNKNOWN			-1
+#define KNOT_ERR_INV_DEVICE			-2
+#define KNOT_ERR_INV_DATA			-3
+#define KNOT_ERR_CLOUD_FAILURE			-4
+#define KNOT_ERR_INV_SCHEMA			-5
+#define KNOT_ERR_SCHEMA_EMPTY			-6
+#define KNOT_ERR_CREDENTIAL_UNAUTHORIZED	-7
 
 // Each KNoT Device or user has a unique ID and token as identification
 // mechanism
 #define KNOT_PROTOCOL_TOKEN_LEN			40
 #define KNOT_PROTOCOL_UUID_LEN			36
 
-// KNoT connect/register messages (from device)
+/* REQ direction: Gateway to endpoint */
 #define KNOT_MSG_REG_REQ			0x10
 #define KNOT_MSG_REG_RSP			0x11
 #define KNOT_MSG_UNREG_REQ			0x12
 #define KNOT_MSG_UNREG_RSP			0x13
 #define KNOT_MSG_AUTH_REQ			0x14
 #define KNOT_MSG_AUTH_RSP			0x15
-/*
- * KNoT device config messages (from device)
- * END flag indicates end of schema transfer.
- */
+
+/* REQ direction: Gateway to endpoint */
 #define KNOT_MSG_SCHEMA_FRAG_REQ		0x40
 #define KNOT_MSG_SCHEMA_FRAG_RSP		0x41
 #define KNOT_MSG_SCHEMA_END_REQ			0x42
 #define KNOT_MSG_SCHEMA_END_RSP			0x43
-// KNoT request messages (from gateway)
 #define KNOT_MSG_PULL_DATA_REQ			0x30 /* Request new data from endpoint */
 #define KNOT_MSG_PULL_DATA_RSP			0x31
-// KNoT response messages (from device)
+/* REQ direction: Both */
 #define KNOT_MSG_PUSH_DATA_REQ			0x20 /* Any direction: endpoint or gateway */
 #define KNOT_MSG_PUSH_DATA_RSP			0x21
+/* REQ direction: Gateway to endpoint */
 #define KNOT_MSG_PUSH_CONFIG_REQ		0x24
 #define KNOT_MSG_PUSH_CONFIG_RSP		0x25
 
