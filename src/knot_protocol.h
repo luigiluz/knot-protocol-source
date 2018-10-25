@@ -17,7 +17,7 @@
 #define KNOT_ERR_CLOUD_FAILURE			-4
 #define KNOT_ERR_INV_SCHEMA			-5
 #define KNOT_ERR_SCHEMA_EMPTY			-6
-#define KNOT_ERR_CREDENTIAL_UNAUTHORIZED	-7
+#define KNOT_ERR_DENIED				-7
 
 // Each KNoT Device or user has a unique ID and token as identification
 // mechanism
