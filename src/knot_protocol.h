@@ -11,8 +11,6 @@
 #ifndef KNOT_PROTOCOL_H
 #define KNOT_PROTOCOL_H
 
-#define KNOT_NO_DATA				2
-#define KNOT_DONE				1
 #define KNOT_SUCCESS				0
 #define KNOT_ERROR_UNKNOWN			-1
 #define KNOT_INVALID_DEVICE			-2
@@ -36,10 +34,6 @@
 #define KNOT_PROTOCOL_TOKEN_LEN			40
 #define KNOT_PROTOCOL_UUID_LEN			36
 
-#define KNOT_PROTOCOL_DATA_ID_MAX		0xFE
-#define KNOT_PROTOCOL_DATA_ID_NA		0xFF
-
-#define KNOT_MSG_INVALID			0x00
 // KNoT connect/register messages (from device)
 #define KNOT_MSG_REG_REQ			0x10
 #define KNOT_MSG_REG_RSP			0x11
@@ -55,19 +49,12 @@
 #define KNOT_MSG_SCHEMA_FRAG_RSP		0x41
 #define KNOT_MSG_SCHEMA_END_REQ			0x42
 #define KNOT_MSG_SCHEMA_END_RSP			0x43
-// KNoT data sending config messages (from gateway)
-#define KNOT_MSG_GET_CONFIG			0x50
-#define KNOT_MSG_SET_CONFIG			0x51
 // KNoT request messages (from gateway)
-#define KNOT_MSG_SET_DATA			0x31
-#define KNOT_MSG_GET_CMD			0x32
-#define KNOT_MSG_SET_CMD			0x33
 #define KNOT_MSG_PULL_DATA_REQ			0x30 /* Request new data from endpoint */
 #define KNOT_MSG_PULL_DATA_RSP			0x31
 // KNoT response messages (from device)
-#define KNOT_MSG_PUSH_DATA_REQ			0x20 /* Sending data from endpoint */
+#define KNOT_MSG_PUSH_DATA_REQ			0x20 /* Any direction: endpoint or gateway */
 #define KNOT_MSG_PUSH_DATA_RSP			0x21
-#define KNOT_MSG_CMD				0x22
 #define KNOT_MSG_PUSH_CONFIG_REQ		0x24
 #define KNOT_MSG_PUSH_CONFIG_RSP		0x25
 
