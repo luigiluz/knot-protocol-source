@@ -24,7 +24,7 @@
 #define KNOT_CLOUD_OFFLINE			-8
 #define KNOT_INVALID_UUID			-9
 #define KNOT_INVALID_UUID_CLOUD			-10
-#define KNOT_REGISTER_INVALID_DEVICENAME	-11
+#define KNOT_REG_INVALID_DEVICENAME	-11
 #define KNOT_INVALID_SCHEMA			-12
 #define KNOT_SCHEMA_NOT_FOUND			-13
 #define KNOT_SCHEMA_EMPTY			-14
@@ -41,34 +41,35 @@
 
 #define KNOT_MSG_INVALID			0x00
 // KNoT connect/register messages (from device)
-#define KNOT_MSG_REGISTER_REQ			0x10
-#define KNOT_MSG_REGISTER_RSP			0x11
-#define KNOT_MSG_UNREGISTER_REQ			0x12
-#define KNOT_MSG_UNREGISTER_RSP			0x13
+#define KNOT_MSG_REG_REQ			0x10
+#define KNOT_MSG_REG_RSP			0x11
+#define KNOT_MSG_UNREG_REQ			0x12
+#define KNOT_MSG_UNREG_RSP			0x13
 #define KNOT_MSG_AUTH_REQ			0x14
 #define KNOT_MSG_AUTH_RSP			0x15
 /*
  * KNoT device config messages (from device)
  * END flag indicates end of schema transfer.
  */
-#define KNOT_MSG_SCHEMA				0x40
-#define KNOT_MSG_SCHEMA_RSP			0x41
-#define KNOT_MSG_SCHEMA_END			0x42
+#define KNOT_MSG_SCHEMA_FRAG_REQ		0x40
+#define KNOT_MSG_SCHEMA_FRAG_RSP		0x41
+#define KNOT_MSG_SCHEMA_END_REQ			0x42
 #define KNOT_MSG_SCHEMA_END_RSP			0x43
 // KNoT data sending config messages (from gateway)
 #define KNOT_MSG_GET_CONFIG			0x50
 #define KNOT_MSG_SET_CONFIG			0x51
 // KNoT request messages (from gateway)
-#define KNOT_MSG_GET_DATA			0x30
 #define KNOT_MSG_SET_DATA			0x31
-#define KNOT_MSG_GET_COMMAND			0x32
-#define KNOT_MSG_SET_COMMAND			0x33
+#define KNOT_MSG_GET_CMD			0x32
+#define KNOT_MSG_SET_CMD			0x33
+#define KNOT_MSG_PULL_DATA_REQ			0x30 /* Request new data from endpoint */
+#define KNOT_MSG_PULL_DATA_RSP			0x31
 // KNoT response messages (from device)
-#define KNOT_MSG_DATA				0x20
-#define KNOT_MSG_DATA_RSP			0x21
-#define KNOT_MSG_COMMAND			0x22
-#define KNOT_MSG_CONFIG				0x24
-#define KNOT_MSG_CONFIG_RSP			0x25
+#define KNOT_MSG_PUSH_DATA_REQ			0x20 /* Sending data from endpoint */
+#define KNOT_MSG_PUSH_DATA_RSP			0x21
+#define KNOT_MSG_CMD				0x22
+#define KNOT_MSG_PUSH_CONFIG_REQ		0x24
+#define KNOT_MSG_PUSH_CONFIG_RSP		0x25
 
 // KNoT event flags passed by config messages
 #define KNOT_EVT_FLAG_NONE			0x00
@@ -76,7 +77,7 @@
 #define KNOT_EVT_FLAG_LOWER_THRESHOLD		0x02
 #define KNOT_EVT_FLAG_UPPER_THRESHOLD		0x04
 #define KNOT_EVT_FLAG_CHANGE			0x08
-#define KNOT_EVT_FLAG_UNREGISTERED		0x80
+#define KNOT_EVT_FLAG_UNREG			0x80
 #define KNOT_EVENT_FLAG_MAX			(KNOT_EVT_FLAG_TIME |\
 						KNOT_EVT_FLAG_LOWER_THRESHOLD |\
 						KNOT_EVT_FLAG_UPPER_THRESHOLD |\
