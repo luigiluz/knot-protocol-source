@@ -21,8 +21,8 @@
 
 // Each KNoT Device or user has a unique ID and token as identification
 // mechanism
-#define KNOT_PROTOCOL_TOKEN_LEN			40
-#define KNOT_PROTOCOL_UUID_LEN			36
+#define KNOT_ID_TOKEN_LEN			40
+#define KNOT_ID_UUID_LEN			36
 
 /* REQ direction: Gateway to endpoint */
 #define KNOT_MSG_REG_REQ			0x10
@@ -110,16 +110,16 @@ typedef struct __attribute__ ((packed)) {
 typedef struct __attribute__ ((packed)) {
 	knot_msg_header		hdr;
 	int8_t			result;
-	char			uuid[KNOT_PROTOCOL_UUID_LEN];
-	char			token[KNOT_PROTOCOL_TOKEN_LEN];
+	char			uuid[KNOT_ID_UUID_LEN];
+	char			token[KNOT_ID_TOKEN_LEN];
 } knot_msg_credential; // hdr + 40 + 36 bytes
 
 /* A human readable name for each device */
-#define KNOT_PROTOCOL_DEVICE_NAME_LEN		64
+#define KNOT_DEV_NAME_LEN		64
 typedef struct __attribute__ ((packed)) {
 	knot_msg_header		hdr;
 	uint64_t		id;	/* Device id: mac or user defined */
-	char			devName[KNOT_PROTOCOL_DEVICE_NAME_LEN];
+	char			devName[KNOT_DEV_NAME_LEN];
 } knot_msg_register; // hdr + 64 bytes
 
 /* Requirement: authenticated PHY link */
@@ -129,17 +129,17 @@ typedef struct __attribute__ ((packed)) {
 
 typedef struct __attribute__ ((packed)) {
 	knot_msg_header		hdr;
-	char			uuid[KNOT_PROTOCOL_UUID_LEN];
-	char			token[KNOT_PROTOCOL_TOKEN_LEN];
+	char			uuid[KNOT_ID_UUID_LEN];
+	char			token[KNOT_ID_TOKEN_LEN];
 } knot_msg_authentication;
 
 /* A human readable name for each data source/sink */
-#define KNOT_PROTOCOL_DATA_NAME_LEN		23
+#define KNOT_DATA_NAME_LEN		23
 typedef struct __attribute__ ((packed)) {
 	uint8_t			value_type;	// KNOT_VALUE_TYPE_* (int, float, bool, raw)
 	uint8_t			unit;		// KNOT_UNIT_*
 	uint16_t		type_id;	// KNOT_TYPE_ID_*
-	char			name[KNOT_PROTOCOL_DATA_NAME_LEN];
+	char			name[KNOT_DATA_NAME_LEN];
 } knot_schema; // 30 octets
 
 typedef struct __attribute__ ((packed)) {
