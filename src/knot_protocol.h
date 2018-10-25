@@ -15,19 +15,10 @@
 #define KNOT_ERROR_UNKNOWN			-1
 #define KNOT_INVALID_DEVICE			-2
 #define KNOT_INVALID_DATA			-3
-#define KNOT_INVALID_DATA_RAW			-4
-#define KNOT_DEVICE_NOT_FOUND			-5
-#define KNOT_GW_FAILURE				-6
-#define KNOT_CLOUD_FAILURE			-7
-#define KNOT_CLOUD_OFFLINE			-8
-#define KNOT_INVALID_UUID			-9
-#define KNOT_INVALID_UUID_CLOUD			-10
-#define KNOT_REG_INVALID_DEVICENAME	-11
-#define KNOT_INVALID_SCHEMA			-12
-#define KNOT_SCHEMA_NOT_FOUND			-13
-#define KNOT_SCHEMA_EMPTY			-14
-#define KNOT_INVALID_CREDENTIAL			-15
-#define KNOT_CREDENTIAL_UNAUTHORIZED		-16
+#define KNOT_CLOUD_FAILURE			-4
+#define KNOT_INVALID_SCHEMA			-5
+#define KNOT_SCHEMA_EMPTY			-6
+#define KNOT_CREDENTIAL_UNAUTHORIZED		-7
 
 // Each KNoT Device or user has a unique ID and token as identification
 // mechanism
